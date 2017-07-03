@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +21,48 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opJ-gk-kK8">
+                                <rect key="frame" x="50" y="404" width="220" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="WYr-d0-dGr"/>
+                                    <constraint firstAttribute="height" constant="50" id="uxy-Co-BmQ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CB1-a1-Gz8">
+                                <rect key="frame" x="50" y="470" width="220" height="50"/>
+                                <color key="backgroundColor" white="0.97843424479999996" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Login Anonymously"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uID-i8-AcR">
+                                <rect key="frame" x="16" y="72" width="288" height="82"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="60"/>
+                                <color key="textColor" red="0.95294808706523548" green="1" blue="0.98667679253745444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2196078431372549" green="0.47058823529411764" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uID-i8-AcR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2EK-4a-0ff"/>
+                            <constraint firstItem="opJ-gk-kK8" firstAttribute="top" secondItem="uID-i8-AcR" secondAttribute="bottom" constant="250" id="7yT-sH-jtb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uID-i8-AcR" secondAttribute="trailing" id="Fm9-8z-LSk"/>
+                            <constraint firstItem="uID-i8-AcR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IXV-Xg-9I8"/>
+                            <constraint firstItem="opJ-gk-kK8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N80-ip-vIb"/>
+                            <constraint firstItem="CB1-a1-Gz8" firstAttribute="height" secondItem="opJ-gk-kK8" secondAttribute="height" id="Oyh-Pc-KHv"/>
+                            <constraint firstItem="CB1-a1-Gz8" firstAttribute="top" secondItem="opJ-gk-kK8" secondAttribute="bottom" constant="16" id="R8V-Lm-ucp"/>
+                            <constraint firstItem="CB1-a1-Gz8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RUN-6q-tbg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CB1-a1-Gz8" secondAttribute="bottom" constant="48" id="n7W-QX-lfg"/>
+                            <constraint firstItem="CB1-a1-Gz8" firstAttribute="width" secondItem="opJ-gk-kK8" secondAttribute="width" id="qB4-iO-ZSM"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.75" y="135.21126760563379"/>
         </scene>
     </scenes>
 </document>
