@@ -145,40 +145,44 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="a07-yT-BuJ"/>
                     <connections>
-                        <segue destination="WGJ-wq-mJT" kind="show" identifier="ShowChannel" action="showDetailViewController:sender:" id="GKv-xj-lEk"/>
+                        <segue destination="zBg-IW-VjN" kind="show" identifier="yellow" id="seS-mY-Nab"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="716-fC-WZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1995" y="115"/>
+            <point key="canvasLocation" x="1928" y="135"/>
         </scene>
         <!--ChatVC-->
-        <scene sceneID="EdO-sA-8n7">
+        <scene sceneID="oiX-Kw-NGI">
             <objects>
-                <viewController id="WGJ-wq-mJT" customClass="ChatVC" customModule="testChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zBg-IW-VjN" customClass="ChatVC" customModule="testChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2gU-dd-G8N"/>
-                        <viewControllerLayoutGuide type="bottom" id="yxa-l4-9M5"/>
+                        <viewControllerLayoutGuide type="top" id="Et5-EM-ODb"/>
+                        <viewControllerLayoutGuide type="bottom" id="zkB-l3-jxd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pSv-Sy-31J">
+                    <view key="view" contentMode="scaleToFill" id="yL7-1C-8gV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E7d-vb-MuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tfj-aJ-xMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2709" y="110"/>
+            <point key="canvasLocation" x="2764" y="136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WYs-po-7Qy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="coz-2U-rgH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EMC-WC-0Lj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="EMC-WC-0Lj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.97843424479999996" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.21960784310000001" green="0.47058823529999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.97843424479999996" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

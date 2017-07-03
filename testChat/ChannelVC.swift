@@ -87,7 +87,7 @@ class ChannelVC: UITableViewController {
         
         if indexPath.section == Section.currentChannelsSection.rawValue {
             let channel = channels[(indexPath as NSIndexPath).row]
-            self.performSegue(withIdentifier: "ShowChannel", sender: channel)
+            self.performSegue(withIdentifier: "yellow", sender: channel)
         }
     }
 
