@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ChatVC.swift
 //  testChat
 //
 //  Created by Shalom Owolabi on 03/07/2017.
@@ -7,19 +7,27 @@
 //
 
 import UIKit
+import Firebase
+import JSQMessagesViewController
 
-class ChatVC: UIViewController {
+final class ChatVC: JSQMessagesViewController {
 
+    var channelRef: DatabaseReference?
+    var channel: Channel? {
+        didSet {
+            title = channel?.name
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        self.senderId = Auth.auth().currentUser?.uid
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
     }
-
+    
 
 }
-
