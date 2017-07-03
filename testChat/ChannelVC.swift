@@ -25,8 +25,11 @@ class ChannelVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "testChat"
+        title = "Home"
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         observeChannels()
+        activityIndicator()
     }
     
     deinit {
@@ -35,11 +38,6 @@ class ChannelVC: UITableViewController {
         }
     }
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
-
     @IBAction func createChannel(_ sender: Any) {
         
         if let name = newChannelTextField?.text {
@@ -50,6 +48,18 @@ class ChannelVC: UITableViewController {
             newChannelRef.setValue(channelItem)
         }
     }
+    
+    func activityIndicator () {
+        if UIApplication.shared.isNetworkActivityIndicatorVisible == true {
+            let customGrey = UIColor(red: 224/255.0, green: 235/255.0, blue: 239/255.0, alpha: 1.0)
+            tableView.backgroundColor = customGrey
+            tableView.isUserInteractionEnabled = false
+        }else{
+            tableView.backgroundColor = UIColor.white
+            tableView.isUserInteractionEnabled = true
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
@@ -69,6 +79,7 @@ class ChannelVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let reuseIdentifier = (indexPath as IndexPath).section == Section.createNewChannelSection.rawValue ? "NewChannel" : "ExistingChannel"
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         
@@ -78,6 +89,8 @@ class ChannelVC: UITableViewController {
             }
         } else if (indexPath as IndexPath).section == Section.currentChannelsSection.rawValue {
             cell.textLabel?.text = channels[(indexPath as IndexPath).row].name
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            activityIndicator()
         }
         
         return cell
@@ -106,12 +119,14 @@ class ChannelVC: UITableViewController {
     private func observeChannels() {
         // Use the observe method to listen for new
         // channels being written to the Firebase DB
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         channelRefHandle = channelRef.observe(.childAdded, with: { (snapshot) -> Void in // 1
             let channelData = snapshot.value as! Dictionary<String, AnyObject> // 2
             let id = snapshot.key
             if let name = channelData["name"] as! String!, name.characters.count > 0 { // 3
                 self.channels.append(Channel(id: id, name: name))
                 self.tableView.reloadData()
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
             } else {
                 print("Error! Could not decode channel data")
             }

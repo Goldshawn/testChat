@@ -15,8 +15,9 @@ class LoginVC: UIViewController {
     @IBOutlet weak var bottomLayoutGuideConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //UIApplication.shared.isNetworkActivityIndicatorVisible = true
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginVC.dismissKeyboard))
+
         
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
         //tap.cancelsTouchesInView = false
@@ -45,6 +46,7 @@ class LoginVC: UIViewController {
                     self.view.endEditing(true)
                     return
                 }
+                //UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.performSegue(withIdentifier: "LoginToChat", sender: nil)
             })
         }

@@ -121,15 +121,44 @@ final class ChatVC: JSQMessagesViewController {
     }
     
     override func didPressAccessoryButton(_ sender: UIButton!) {
+        
         let picker = UIImagePickerController()
         picker.delegate = self
-        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
-            picker.sourceType = UIImagePickerControllerSourceType.camera
-        } else {
-            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        }
         
-        present(picker, animated: true, completion:nil)
+        let optionMenu = UIAlertController(title: nil, message: "Choose Attachment Source", preferredStyle: .actionSheet)
+        
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
+                picker.sourceType = UIImagePickerControllerSourceType.camera
+            } else {
+                picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            }
+            
+            self.present(picker, animated: true, completion:nil)
+           
+        })
+        let photoAction = UIAlertAction(title: "Photos", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            
+            self.present(picker, animated: true, completion:nil)
+            
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Cancelled")
+        })
+        
+        
+        optionMenu.addAction(cameraAction)
+        optionMenu.addAction(photoAction)
+        optionMenu.addAction(cancelAction)
+        
+        
+        self.present(optionMenu, animated: true, completion: nil)
     }
     
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
