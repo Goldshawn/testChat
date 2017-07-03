@@ -18,6 +18,7 @@
 		71734D821F0A7469006F6601 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71734D811F0A7469006F6601 /* CreateChannelCell.swift */; };
 		71734D871F0A751A006F6601 /* Chanell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71734D861F0A751A006F6601 /* Chanell.swift */; };
 		71734D891F0A7C11006F6601 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71734D881F0A7C11006F6601 /* ChatVC.swift */; };
+		71734D8E1F0AC199006F6601 /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71734D8D1F0AC199006F6601 /* UIImage+SwiftyGif.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		71734D811F0A7469006F6601 /* CreateChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
 		71734D861F0A751A006F6601 /* Chanell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chanell.swift; sourceTree = "<group>"; };
 		71734D881F0A7C11006F6601 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		71734D8D1F0AC199006F6601 /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
 		96194CB5A9DC0C25A7528CDC /* Pods-testChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-testChat/Pods-testChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,10 +82,10 @@
 		71734D6A1F0A5712006F6601 /* testChat */ = {
 			isa = PBXGroup;
 			children = (
+				71734D8C1F0ABBF6006F6601 /* Additional Data */,
 				71734D831F0A74E3006F6601 /* Model */,
 				71734D841F0A74EA006F6601 /* View */,
 				71734D851F0A74F0006F6601 /* Controller */,
-				71734D6B1F0A5712006F6601 /* AppDelegate.swift */,
 				71734D6F1F0A5712006F6601 /* Main.storyboard */,
 				71734D721F0A5712006F6601 /* Assets.xcassets */,
 				71734D741F0A5712006F6601 /* LaunchScreen.storyboard */,
@@ -117,6 +119,15 @@
 				71734D881F0A7C11006F6601 /* ChatVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		71734D8C1F0ABBF6006F6601 /* Additional Data */ = {
+			isa = PBXGroup;
+			children = (
+				71734D8D1F0AC199006F6601 /* UIImage+SwiftyGif.swift */,
+				71734D6B1F0A5712006F6601 /* AppDelegate.swift */,
+			);
+			name = "Additional Data";
 			sourceTree = "<group>";
 		};
 		EA601BDED30B115F990FF789 /* Frameworks */ = {
@@ -253,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71734D891F0A7C11006F6601 /* ChatVC.swift in Sources */,
+				71734D8E1F0AC199006F6601 /* UIImage+SwiftyGif.swift in Sources */,
 				71734D871F0A751A006F6601 /* Chanell.swift in Sources */,
 				71734D6E1F0A5712006F6601 /* LoginVC.swift in Sources */,
 				71734D801F0A66F3006F6601 /* ChannelVC.swift in Sources */,
