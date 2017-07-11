@@ -42,9 +42,7 @@ class ChannelVC: UITableViewController {
         
         if let name = newChannelTextField?.text {
             let newChannelRef = channelRef.childByAutoId()
-            let channelItem = [
-                "name": name
-            ]
+            let channelItem = ["name": name]
             newChannelRef.setValue(channelItem)
         }
     }
@@ -120,10 +118,10 @@ class ChannelVC: UITableViewController {
         // Use the observe method to listen for new
         // channels being written to the Firebase DB
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        channelRefHandle = channelRef.observe(.childAdded, with: { (snapshot) -> Void in // 1
-            let channelData = snapshot.value as! Dictionary<String, AnyObject> // 2
+        channelRefHandle = channelRef.observe(.childAdded, with: { (snapshot) -> Void in
+            let channelData = snapshot.value as! Dictionary<String, AnyObject>
             let id = snapshot.key
-            if let name = channelData["name"] as! String!, name.characters.count > 0 { // 3
+            if let name = channelData["name"] as! String!, name.characters.count > 0 {
                 self.channels.append(Channel(id: id, name: name))
                 self.tableView.reloadData()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false

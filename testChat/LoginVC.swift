@@ -16,18 +16,22 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        //Creates a UIGesture whose action is defined in the dismissKeyboard function
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginVC.dismissKeyboard))
 
         
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
         //tap.cancelsTouchesInView = false
         
+        //Calls the gesture into the default view of the VC
         view.addGestureRecognizer(tap)
         
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
@@ -40,6 +44,7 @@ class LoginVC: UIViewController {
     
     @IBAction func loginDidTouch(_ sender: Any) {
         if nameField.text != "" {
+            
             Auth.auth().signInAnonymously(completion: { (user, error) in
                 if let err = error {
                     print(err.localizedDescription)
